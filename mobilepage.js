@@ -14,6 +14,12 @@ var MobileLib = (function () {
             var html = '';
             for (var i in messages) {
                 var message = messages[i]
+
+                var content = message.content;
+                if (content.length > 125) {
+                    content = content.slice(0, 125) + '... <span class="readmore" onclick="MobileLib.readMore(this)">Read more</span>'
+                }
+
                 html += '<div class="user_box" onmousedown="MobileLib.swipe(event);" onmouseup="MobileLib.swipe(event, true);">' +
                     '<div class="delete" onclick="MobileLib.deleteMessage(this)"><div class="delete_main"><em class="delete_icon"></em><span>Delete</span></div></div>' +
                     '<div class="li_hdr">' +
@@ -23,7 +29,7 @@ var MobileLib = (function () {
                     '<span class="user_date">' + timeSince(new Date(message.updated)) + '</span>' +
                     '</div>' +
                     '</div>' +
-                    '<div class="user_abt">' + message.content + '</div>' +
+                    '<div class="user_abt" title="' + message.content.replace(/"/gi, '') + '">' + content + '</div>' +
                     '</div>';
             }
 
@@ -40,6 +46,12 @@ var MobileLib = (function () {
             }
         });
 
+    }
+    var _readMore = function (curr) {
+        var $curr = $(curr);
+        var $parent = $(curr).parent();
+        $parent.text($parent.attr('title'));
+        $curr.remove();
     }
     var _swipe = function (event, ismouseup) {
         var $target = $(event.target)
@@ -127,6 +139,7 @@ var MobileLib = (function () {
         init: _init,
         deleteMessage: _deleteMessage,
         swipe: _swipe,
+        readMore: _readMore,
         ajaxRequest: ajaxRequest
     }
 }());
