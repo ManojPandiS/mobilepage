@@ -16,7 +16,7 @@ var MobileLib = (function () {
                 var message = messages[i]
 
                 var content = message.content;
-                if (content.length > 125) {
+                if ($('body').innerWidth() > 850 && content.length > 125) {
                     content = content.slice(0, 125) + '... <span class="readmore" onclick="MobileLib.readMore(this)">Read more</span>'
                 }
 
