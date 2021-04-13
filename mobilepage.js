@@ -1,6 +1,6 @@
 var MobileLib = (function () {
     var _pagetoken = '';
-    var _domainurl = 'http://message-list.appspot.com/';
+    var _domainurl = 'https://message-list.appspot.com/';
     var _callstate = false;
     var _clientX;
     var _init = function () {
