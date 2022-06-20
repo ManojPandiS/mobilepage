@@ -103,7 +103,7 @@ var MobileLib = (function () {
                 return Math.floor(interval / 365) + " Years ago";
             }
             if (interval > 30) {
-                return Math.floor(interval / 30) + " Mays ago";
+                return Math.floor(interval / 30) + " Months ago";
             }
             return Math.floor(interval) + " days ago";
         }
