@@ -6,4 +6,5 @@
 4. Read more action added for lenthy description.
 
 Jquery Live preview link - https://manojpandis.github.io/mobilepage/
+
 VUE Live preview link - https://manojpandis.github.io/mobilepage/Mobile_page
