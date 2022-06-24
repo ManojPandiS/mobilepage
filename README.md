@@ -5,4 +5,5 @@
 3. Delete button shown on card swipe.
 4. Read more action added for lenthy description.
 
-Live preview link - https://manojpandis.github.io/mobilepage/
+Jquery Live preview link - https://manojpandis.github.io/mobilepage/
+VUE Live preview link - https://manojpandis.github.io/mobilepage/Mobile_page
